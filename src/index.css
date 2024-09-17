@@ -1,3 +1,13 @@
+/* Importa Normalize.css se non l'hai già fatto */
+@import "normalize.css";
+
+/* Standardizza box-sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 :root {
   --color-primary: #2563eb;
   --color-secondary: #3b82f6;
