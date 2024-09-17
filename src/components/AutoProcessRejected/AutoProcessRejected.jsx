@@ -44,6 +44,20 @@ const AutoProcessRejected = () => {
       </button>
       {rejectedList.length > 0 && (
         <div className="data-section">
+          {/* Grafico a colonne per visualizzare i dati aggregati */}
+          <div className="chart-container">
+            <h2>Distribuzione Errori</h2>
+            <ResponsiveContainer width="100%" height={300}>
+              <BarChart data={chartData}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="error_narrative" />
+                <YAxis allowDecimals={false} />
+                <Tooltip />
+                <Legend />
+                <Bar dataKey="count" fill="#8884d8" name="Numero di Errori" />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
           <table>
             <thead>
               <tr>
@@ -62,21 +76,6 @@ const AutoProcessRejected = () => {
               ))}
             </tbody>
           </table>
-
-          {/* Grafico a colonne per visualizzare i dati aggregati */}
-          <div className="chart-container">
-            <h2>Distribuzione Errori</h2>
-            <ResponsiveContainer width="100%" height={300}>
-              <BarChart data={chartData}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="error_narrative" />
-                <YAxis allowDecimals={false} />
-                <Tooltip />
-                <Legend />
-                <Bar dataKey="count" fill="#8884d8" name="Numero di Errori" />
-              </BarChart>
-            </ResponsiveContainer>
-          </div>
         </div>
       )}
     </div>
