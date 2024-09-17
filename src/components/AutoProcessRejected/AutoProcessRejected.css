@@ -1,0 +1,64 @@
+/* AutoProcessRejected.css */
+
+.auto-process-dashboard {
+  padding: 20px;
+}
+
+.auto-process-dashboard h1 {
+  margin-bottom: 20px;
+  color: #1f2937;
+}
+
+.auto-process-dashboard button {
+  padding: 10px 20px;
+  background-color: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.auto-process-dashboard button:hover {
+  background-color: #1e40af;
+}
+
+.data-section {
+  margin-top: 30px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+}
+
+thead {
+  background-color: #3b82f6;
+  color: #fff;
+}
+
+thead th {
+  padding: 12px;
+  text-align: left;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f3f4f6;
+}
+
+tbody tr:hover {
+  background-color: #e5e7eb;
+}
+
+tbody td {
+  padding: 12px;
+  color: #374151;
+}
+
+.chart-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
