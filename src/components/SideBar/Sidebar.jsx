@@ -7,13 +7,19 @@ const Sidebar = () => {
     <div className="sidebar">
       <h2 className="sidebar-title">Dashboard</h2>
       <nav>
-        <NavLink to="/" className="sidebar-link" activeClassName="active-link">
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            isActive ? "sidebar-link active-link" : "sidebar-link"
+          }
+        >
           Home
         </NavLink>
         <NavLink
           to="/auto-process-rejected"
-          className="sidebar-link"
-          activeClassName="active-link"
+          className={({ isActive }) =>
+            isActive ? "sidebar-link active-link" : "sidebar-link"
+          }
         >
           Auto Process Rejected
         </NavLink>

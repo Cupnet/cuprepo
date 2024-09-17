@@ -2,28 +2,44 @@
 
 .sidebar {
   width: 250px;
-  background-color: #1f2937;
-  color: #fff;
+  background-color: #ffffff; /* Colore di sfondo per la sidebar */
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* Assicura una disposizione verticale */
   padding: 20px;
+  border: 1px solid var(--color-secondary);
+  border-radius: 8px;
+  height: 100vh;
 }
 
 .sidebar-title {
   font-size: 24px;
   margin-bottom: 30px;
   text-align: center;
+  color: var(--color-text);
 }
 
 .sidebar-link {
-  color: #9ca3af;
+  display: block; /* Visualizzazione verticale */
+  color: var(--color-text);
   text-decoration: none;
-  padding: 10px 0;
-  transition: color 0.3s;
+  padding: 10px 15px;
+  margin: 5px 0;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+  background-color: transparent;
 }
 
-.sidebar-link:hover,
+.sidebar-link:hover {
+  background-color: var(
+    --color-secondary
+  ); /* Cambia colore al passaggio del mouse */
+  color: #ffffff;
+}
+
 .active-link {
-  color: #fff;
-  font-weight: 500;
+  background-color: var(
+    --color-secondary
+  ); /* Colore di sfondo per l'elemento attivo */
+  color: #ffffff;
+  font-weight: 600;
 }

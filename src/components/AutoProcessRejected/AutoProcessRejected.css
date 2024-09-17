@@ -11,7 +11,7 @@
 
 .auto-process-dashboard button {
   padding: 10px 20px;
-  background-color: #2563eb;
+  background-color: var(--color-primary);
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -20,7 +20,7 @@
 }
 
 .auto-process-dashboard button:hover {
-  background-color: #1e40af;
+  background-color: var(--color-secondary);
 }
 
 .data-section {
@@ -34,7 +34,7 @@ table {
 }
 
 thead {
-  background-color: #3b82f6;
+  background-color: var(--color-table-header);
   color: #fff;
 }
 
@@ -44,11 +44,11 @@ thead th {
 }
 
 tbody tr:nth-child(even) {
-  background-color: #f3f4f6;
+  background-color: var(--color-table-row-even);
 }
 
 tbody tr:hover {
-  background-color: #e5e7eb;
+  background-color: var(--color-table-row-hover);
 }
 
 tbody td {

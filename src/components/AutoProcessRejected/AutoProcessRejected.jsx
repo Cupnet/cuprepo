@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { fakeData } from "../../fakeData";
 import "./AutoProcessRejected.css";
 import {
@@ -14,10 +14,27 @@ import {
 
 const AutoProcessRejected = () => {
   const [rejectedList, setRejectedList] = useState([]);
+  const [chartData, setChartData] = useState([]);
 
   const handleViewRejects = () => {
     setRejectedList(fakeData);
   };
+
+  useEffect(() => {
+    if (rejectedList.length > 0) {
+      const counts = rejectedList.reduce((acc, item) => {
+        acc[item.error_narrative] = (acc[item.error_narrative] || 0) + 1;
+        return acc;
+      }, {});
+
+      const formattedData = Object.keys(counts).map((key) => ({
+        error_narrative: key,
+        count: counts[key],
+      }));
+
+      setChartData(formattedData);
+    }
+  }, [rejectedList]);
 
   return (
     <div className="auto-process-dashboard">
@@ -46,17 +63,17 @@ const AutoProcessRejected = () => {
             </tbody>
           </table>
 
-          {/* Grafico a barre per visualizzare i dati in maniera interattiva */}
+          {/* Grafico a colonne per visualizzare i dati aggregati */}
           <div className="chart-container">
             <h2>Distribuzione Errori</h2>
             <ResponsiveContainer width="100%" height={300}>
-              <BarChart data={rejectedList}>
+              <BarChart data={chartData}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="error_narrative" />
-                <YAxis />
+                <YAxis allowDecimals={false} />
                 <Tooltip />
                 <Legend />
-                <Bar dataKey="message_id" fill="#8884d8" />
+                <Bar dataKey="count" fill="#8884d8" name="Numero di Errori" />
               </BarChart>
             </ResponsiveContainer>
           </div>
